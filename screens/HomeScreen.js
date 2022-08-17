@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image } from 'react-native'
+import { View, Text, SafeAreaView, Image, StyleSheet } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from "@react-navigation/native"
 import {
@@ -18,20 +18,21 @@ export default function HomeScreen() {
     }, []);
 
   return (
-    <SafeAreaView className="bg-white pt-5">
-      <Text className="border-solid border-2 border-sky-500">
+    <SafeAreaView style={styles.container}>
         {/* Header */}
-        <View className="flex-row pb-3 items-center mx-4 space-x-2 w-full pr-7">
+        <View style={styles.header}  >
             <Image
                 source={{
                     uri: 'https://links.papareact.com/wru'
                 }}
-                className="h-7 w-7 bg-gray-300 p-4 rounded-full"
+                style={styles.img}
+                // className="h-7 w-7 bg-gray-300 p-4 rounded-full"
             />
-            <View className="flex-1">
-                <Text className="fon-bold text-gray-400 text-xs">
-                    Deliver Now!</Text>
-                <Text className="font-bold text-xl">
+            <View style={styles.header_text}>
+                <Text class="" className="fon-bold text-gray-400 text-xs">
+                    Deliver Now!
+                </Text>
+                <Text style={styles.header_text_align} className="font-bold text-xl">
                     Current Location
                     <ChevronDownIcon size={20} color="#00CCBB" />
                 </Text>
@@ -39,7 +40,46 @@ export default function HomeScreen() {
 
             <UserIcon size={35} color="#00CCBB"/>
         </View>
-      </Text>
+      
     </SafeAreaView>
   )
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    // border: '1px solid red',
+  },
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 10,
+    backgroundColor: '#fff',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    height: 'auto',
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingTop: 15,
+    paddingBottom: 15,
+    // paddingTop: '10px',
+  },
+  img: {
+    height: 28,
+    width: 28,
+    backgroundColor: '#5153653D',
+    padding: 16,
+    borderRadius: '100%'
+  },
+  header_text: {
+    flex: 1,
+  },
+  header_text_align: {
+    display: 'flex',
+    gap: 5,
+    alignItems: 'center',
+  }
+});
