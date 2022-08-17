@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image, StyleSheet } from 'react-native'
+import { View, Text, SafeAreaView, Image, StyleSheet, TextInput } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from "@react-navigation/native"
 import {
@@ -18,18 +18,18 @@ export default function HomeScreen() {
     }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView className="bg-white pt-5 pb-2">
         {/* Header */}
-        <View style={styles.header}  >
+        <View className="flex-row px-3 pb-3 items-center gap-2">
             <Image
                 source={{
                     uri: 'https://links.papareact.com/wru'
                 }}
-                style={styles.img}
-                // className="h-7 w-7 bg-gray-300 p-4 rounded-full"
+                // style={styles.img}
+                className="h-7 w-7 bg-gray-300 p-4 rounded-full"
             />
-            <View style={styles.header_text}>
-                <Text class="" className="fon-bold text-gray-400 text-xs">
+            <View className="flex-1">
+                <Text className="fon-bold text-gray-400 text-xs">
                     Deliver Now!
                 </Text>
                 <Text style={styles.header_text_align} className="font-bold text-xl">
@@ -39,6 +39,20 @@ export default function HomeScreen() {
             </View>
 
             <UserIcon size={35} color="#00CCBB"/>
+        </View>
+
+        {/* Search */}
+        <View className="flex-row w-full px-3 items-center space-x-2">
+            <View className="flex-row flex-1 space-x-2 px-2 items-center h-10 bg-gray-200 justify-start rounded-sm">
+                <SearchIcon color="gray" size={20} />
+                <TextInput 
+                    placeholder="Restaurants and cuisines"
+                    keyboardType="default"
+                    className="outline-0"
+                />
+            </View>
+
+            <AdjustmentsIcon color="#00CCBB"/>
         </View>
       
     </SafeAreaView>
