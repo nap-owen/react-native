@@ -48,7 +48,7 @@ export default function HomeScreen() {
                 <TextInput 
                     placeholder="Restaurants and cuisines"
                     keyboardType="default"
-                    className="outline-0"
+                    className="w-full h-5/6 outline-none"
                 />
             </View>
 
