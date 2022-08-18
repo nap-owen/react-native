@@ -18,42 +18,44 @@ export default function HomeScreen() {
     }, []);
 
   return (
-    <SafeAreaView className="bg-white pt-5 pb-2">
+    <SafeAreaView className="bg-white pt-5 pb-2 w-full">
         {/* Header */}
-        <View className="flex-row px-3 pb-3 items-center gap-2">
-            <Image
-                source={{
-                    uri: 'https://links.papareact.com/wru'
-                }}
-                // style={styles.img}
-                className="h-7 w-7 bg-gray-300 p-4 rounded-full"
-            />
-            <View className="flex-1">
-                <Text className="fon-bold text-gray-400 text-xs">
-                    Deliver Now!
-                </Text>
-                <Text style={styles.header_text_align} className="font-bold text-xl">
-                    Current Location
-                    <ChevronDownIcon size={20} color="#00CCBB" />
-                </Text>
-            </View>
+        <Text>
+          <View className="flex-row space-x-3 px-3 pb-3 w-full items-center">
+              <Image
+                  source={{
+                      uri: 'https://links.papareact.com/wru'
+                  }}
+                  // style={styles.img}
+                  className="h-7 w-7 bg-gray-300 p-4 rounded-full"
+              />
+              <View className="flex-1">
+                  <Text className="fon-bold text-gray-400 text-xs">
+                      Deliver Now!
+                  </Text>
+                  <Text style={styles.header_text_align} className="font-bold text-xl">
+                      Current Location
+                      <ChevronDownIcon size={20} color="#00CCBB" />
+                  </Text>
+              </View>
 
-            <UserIcon size={35} color="#00CCBB"/>
-        </View>
+              <UserIcon size={35} color="#00CCBB"/>
+          </View>
 
-        {/* Search */}
-        <View className="flex-row w-full px-3 items-center space-x-2">
-            <View className="flex-row flex-1 space-x-2 px-2 items-center h-10 bg-gray-200 justify-start rounded-sm">
-                <SearchIcon color="gray" size={20} />
-                <TextInput 
-                    placeholder="Restaurants and cuisines"
-                    keyboardType="default"
-                    className="w-full h-5/6 outline-none"
-                />
-            </View>
+          {/* Search */}
+          <View className="flex-row w-full px-3 items-center space-x-2">
+              <View className="flex-row flex-1 space-x-2 px-2 items-center h-10 bg-gray-200 justify-start rounded-sm">
+                  <SearchIcon color="gray" size={20} />
+                  <TextInput 
+                      placeholder="Restaurants and cuisines"
+                      keyboardType="default"
+                      className="w-full h-5/6 outline-none"
+                  />
+              </View>
 
-            <AdjustmentsIcon color="#00CCBB"/>
-        </View>
+              <AdjustmentsIcon color="#00CCBB"/>
+          </View>
+        </Text>
       
     </SafeAreaView>
   )
